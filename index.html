@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juan Pablo Berrío | Marca personal</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f7fb;
+      --surface: #ffffff;
+      --primary: #1d4ed8;
+      --primary-soft: #dbeafe;
+      --text: #0f172a;
+      --muted: #475569;
+      --border: #dbe3f0;
+      --shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #eff6ff 0%, var(--bg) 280px);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(1100px, calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 5rem 0 3rem;
+    }
+
+    .hero-card,
+    .section-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      padding: 3rem;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 1rem;
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-weight: bold;
+      letter-spacing: 0.02em;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin-top: 0;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 4vw, 4rem);
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin: 0 0 1rem;
+      color: var(--muted);
+    }
+
+    .hero-copy {
+      max-width: 700px;
+    }
+
+    .contact {
+      margin-top: 1.75rem;
+      font-weight: bold;
+      color: var(--text);
+    }
+
+    .section {
+      padding-bottom: 2rem;
+    }
+
+    .section-card {
+      padding: 2rem;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .project {
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: #f8fbff;
+    }
+
+    .project h3 {
+      margin-bottom: 0.75rem;
+      font-size: 1.1rem;
+    }
+
+    .project a {
+      color: var(--primary);
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .project a:hover,
+    .project a:focus {
+      text-decoration: underline;
+    }
+
+    footer {
+      padding: 0 0 3rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding-top: 2rem;
+      }
+
+      .hero-card,
+      .section-card {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-card">
+          <span class="eyebrow">Marca personal</span>
+          <div class="hero-copy">
+            <h1>Juan Pablo Berrío</h1>
+            <p>
+              Construyo proyectos prácticos alrededor de infraestructura cloud, automatización y
+              desarrollo conectado con hardware. Este sitio resume parte de lo que vengo trabajando
+              en mis repositorios públicos.
+            </p>
+            <p>
+              Me interesa crear soluciones útiles, fáciles de explicar y enfocadas en aprendizaje
+              aplicado: desde demos con Terraform sobre AWS hasta integraciones entre ESP32,
+              telefonía IP y servicios en contenedores.
+            </p>
+            <p class="contact">Contacto: jpabloberrio@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-card">
+          <h2>Proyectos destacados</h2>
+          <p>
+            Estos son algunos de los repositorios que mejor representan mi trabajo reciente y las
+            tecnologías que disfruto explorar.
+          </p>
+
+          <div class="projects">
+            <article class="project">
+              <h3>ESP32Client_ServerPBX</h3>
+              <p>
+                Proyecto que conecta un ESP32 con Issabel/Asterisk para enviar y recibir eventos,
+                disparar llamadas SIP y ejecutar acciones físicas desde telefonía IP.
+              </p>
+              <a href="https://github.com/jpberriol/ESP32Client_ServerPBX">Ver repositorio</a>
+            </article>
+
+            <article class="project">
+              <h3>TerraformDemo</h3>
+              <p>
+                Demo de infraestructura AWS con Terraform usando módulos reutilizables para VPC,
+                security groups y EC2, pensado como guía práctica de despliegue.
+              </p>
+              <a href="https://github.com/jpberriol/TerraformDemo">Ver repositorio</a>
+            </article>
+
+            <article class="project">
+              <h3>TerraformDemoV2</h3>
+              <p>
+                Versión educativa enfocada en crear una instancia EC2 y explicar de forma clara el
+                flujo de trabajo de Terraform: init, plan, apply y destroy.
+              </p>
+              <a href="https://github.com/jpberriol/TerraformDemoV2">Ver repositorio</a>
+            </article>
+
+            <article class="project">
+              <h3>ecs-demo</h3>
+              <p>
+                Demo orientada a despliegue en ECS con Dockerfile, definición de tarea y
+                automatización desde GitHub Actions para ejecutar un flujo de entrega simple.
+              </p>
+              <a href="https://github.com/jpberriol/ecs-demo">Ver repositorio</a>
+            </article>
+
+            <article class="project">
+              <h3>Java_Arduino</h3>
+              <p>
+                Experimento de integración entre Java y Arduino para explorar comunicación entre
+                software y dispositivos físicos en escenarios de control y automatización.
+              </p>
+              <a href="https://github.com/jpberriol/Java_Arduino">Ver repositorio</a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">Sitio personal de Juan Pablo Berrío.</div>
+  </footer>
+</body>
+</html>
